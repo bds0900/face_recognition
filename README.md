@@ -17,6 +17,12 @@ Next, install the necessary packages as shown below
 - (py3) $ pip install dlib
 - (py3) $ pip install face_recognition
 
+# Start
+(py3) $ python face_recog.py 
+
+# Quit
+Press 'q' or Ctrl + C 
+
 # Files
 ## pre-processing.py
 You must run pre-processing.py before running face_recog.py. This extracts and encodes face features from images which in the Knowns folder

@@ -1,0 +1,6 @@
+example:
+https://www.programcreek.com/python/example/85663/cv2.VideoCapture
+https://www.pyimagesearch.com/2018/06/25/raspberry-pi-face-recognition/
+
+Face_recognition Doc:
+https://face-recognition.readthedocs.io

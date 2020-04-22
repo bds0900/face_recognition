@@ -2,20 +2,20 @@
 Linux- Debian based x64
 
 # Istallation
-*To run the face_recognition applicaion you need these packages 
-*python3 opencv-python opencv-contrib-python dlib face_recognition
+- To run the face_recognition applicaion you need these packages 
+- python3 opencv-python opencv-contrib-python dlib face_recognition
 
 If you are using Linux, it is recommended to separate the environment with virtualenv as below before installing the package
-*$ sudo apt-get install python3 python3-dev python3-venv
-*$ python3 -m venv py3
-*$ source py3/bin/activate
-*(py3) $ pip install --upgrade pip
+- $ sudo apt-get install python3 python3-dev python3-venv
+- $ python3 -m venv py3
+- $ source py3/bin/activate
+- (py3) $ pip install --upgrade pip
 
 Next, install the necessary packages as shown below
-*(py3) $ pip install opencv-python
-*(py3) $ pip install opencv-contrib-python
-*(py3) $ pip install dlib
-*(py3) $ pip install face_recognition
+- (py3) $ pip install opencv-python
+- (py3) $ pip install opencv-contrib-python
+- (py3) $ pip install dlib
+- (py3) $ pip install face_recognition
 
 # Files
 ## pre-processing.py

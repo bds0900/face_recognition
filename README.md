@@ -23,3 +23,10 @@ You must run pre-processing.py before running face_recog.py. This extracts and e
 
 ## face_recog.py
 Compare the pre-encoded features with the features obtained through the camera, and if the two values are similar, they are regarded as the same person
+
+# Folers
+The only difference between <u>face_recognition</u> and <u>tpu_face_recognition</u> is <u>tpu_face_recognition</u> do the face detection with TPU.
+
+![TPU][logo]
+
+[logo]: https://lh3.googleusercontent.com/yS7pkqxF0AqAeA3idMyqSONjVmq3YRDFpyBMtOotcL9iOzqroYE_46jrqTu_K9hnNbZ5JBSDsorFC2ojGH8qEFf4DOqQduXyP4Qi0A=w1000-rw "Coral TPU"

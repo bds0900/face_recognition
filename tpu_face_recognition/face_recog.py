@@ -65,10 +65,7 @@ class FaceRecog():
 
 
     def __init__(self):
-        # Using OpenCV to capture from device 0. If you have trouble capturing
-        # from a webcam, comment the line below out and use a video file
-        # instead.
-        # self.camera = camera.VideoCamera()
+        # Using OpenCV to capture from device 0
         self.camera = cv2.VideoCapture(0)
         self.known_face_encodings = []
         self.known_face_names = [] 
@@ -117,25 +114,17 @@ class FaceRecog():
             #box order is top, left, bottom, right, but embedding requires top, right, bottom, left order, so
             (left,top,right,bottom)=box
             face_locations.append(tuple((top,right,bottom,left)))
-            #face_locations.append(tuple(int(i) for i in obj.bounding_box.flatten().tolist()))
-            # print("-----------------------------")
-            # print(obj.score)
-            # print(box)
-
 
         return face_locations
-
 
 
     def get_frame(self):
         # Grab a single frame of video
         #frame = self.camera.get_frame()
         rec,frame= self.camera.read()
-        # Resize frame of video to 1/4 size for faster face recognition processing
-        #small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
 
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
-        #rgb_small_frame = frame[:, :, ::-1]
+
         rgb_small_frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
         pil_image=Image.fromarray(rgb_small_frame)
         # Only process every other frame of video to save time
@@ -165,9 +154,6 @@ class FaceRecog():
                 
                 self.face_names.append(name)
         
-
-
-
         self.process_this_frame = not self.process_this_frame
 
         # Display the results
@@ -182,13 +168,6 @@ class FaceRecog():
 
         return frame
 
-    def get_jpg_bytes(self):
-        frame = self.get_frame()
-        # We are using Motion JPEG, but OpenCV defaults to capture raw images,
-        # so we must encode it into JPEG in order to correctly display the
-        # video stream.
-        ret, jpg = cv2.imencode('.jpg', frame)
-        return jpg.tobytes()
 
 
 if __name__ == '__main__':

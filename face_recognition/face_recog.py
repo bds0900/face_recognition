@@ -61,11 +61,7 @@ def mutation_query(name):
 class FaceRecog():
 
     def __init__(self):
-        # Using OpenCV to capture from device 0. If you have trouble capturing
-        # from a webcam, comment the line below out and use a video file
-        # instead.
-
-        #self.camera = camera.VideoCamera()
+        # Using OpenCV to capture from device 0.
         self.camera = cv2.VideoCapture(0)
         self.known_face_encodings = []
         self.known_face_names = []
@@ -135,10 +131,9 @@ class FaceRecog():
                     name = self.known_face_names[index]
                     if False==self.checkin[index]:
                         self.checkin[index]=True
-                        #mutation_query(name)
                         thread1 = myThread(name)
                         thread1.start()
-                        #self.run_query(name)
+
 
                 self.face_names.append(name)
         
@@ -163,13 +158,6 @@ class FaceRecog():
 
         return frame
 
-    def get_jpg_bytes(self):
-        frame = self.get_frame()
-        # We are using Motion JPEG, but OpenCV defaults to capture raw images,
-        # so we must encode it into JPEG in order to correctly display the
-        # video stream.
-        ret, jpg = cv2.imencode('.jpg', frame)
-        return jpg.tobytes()
 
 
 if __name__ == '__main__':
